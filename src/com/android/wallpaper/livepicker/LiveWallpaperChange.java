@@ -24,6 +24,7 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.pm.ServiceInfo;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.service.wallpaper.WallpaperService;
@@ -110,5 +111,11 @@ public class LiveWallpaperChange extends LiveWallpaperPreview {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public void onBackPressed() {
+        getWindow().getDecorView().setBackgroundColor(Color.BLACK);
+        super.onBackPressed();
     }
 }
